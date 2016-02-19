@@ -1,0 +1,8 @@
+{
+  "name": "fab-ratings",
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=1.0.0",
+    "iron-icon": "PolymerElements/paper-fab#>=1.0.0,
+    "iron-a11y-keys": "PolymerElements/iron-a11y-keys"
+  }
+}
