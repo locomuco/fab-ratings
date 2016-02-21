@@ -9,7 +9,7 @@
     "fab",
     "rating",
     "polymer",
-    "paper",
+    "paper"
   ],
   "main": "fab-ratings.html",
   "private": true,
