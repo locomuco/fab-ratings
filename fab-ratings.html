@@ -81,7 +81,6 @@ Fired when the count of selected fabs changes.
     <span id="container" tabindex="0" role="slider" aria-valuemax="{{count}}" aria-valuemin="0" aria-valuenow="{{value}}">
       <template is="dom-repeat" items="{{fabs}}" as="fab">
         <paper-fab id="{{fabIcon(fab, value)}}"  mini="true" on-tap="updateValue"></paper-fab>
-
       </template>
     </span>
   </template>
@@ -100,6 +99,17 @@ Fired when the count of selected fabs changes.
         autofocus: {
           type: Boolean,
           value: false
+        },
+        /**
+         * Whether  this element is editable, or not
+         *
+         * @attribute editable
+         * @type Boolean
+         * @value false
+         */
+        editable: {
+          type: Boolean,
+          value: true
         },
         /**
          * Number of fabs to display.
@@ -151,16 +161,22 @@ Fired when the count of selected fabs changes.
       },
       updateValue: function(event, detail) {
         var s = event.model.index;
-        this.value = s + Number(s >= this.value);
+        if (this.editable === "true") {
+          this.value = s + Number(s >= this.value);
+        }
       },
       incrementValue: function() {
         if (this.value < this.count) {
-          this.value++;
+          if (this.editable === "true") {
+            this.value++;
+          }
         }
       },
       decrementValue: function() {
         if (this.value > 0) {
-          this.value--;
+          if (this.editable === "true") {
+            this.value--;
+          }
         }
       },
       handleKeys: function(event, detail, sender) {
