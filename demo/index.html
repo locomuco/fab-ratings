@@ -25,7 +25,12 @@
   <link rel="import" href="../fab-ratings.html">
 
   <style is="custom-style" include="demo-pages-shared-styles">
-
+    .red {
+       --custom-fab-color: var(--paper-red-500);
+    }
+    .blue {
+       --custom-fab-color: var(--paper-blue-500);
+    }
   </style>
 </head>
   <body unresolved>
@@ -34,10 +39,13 @@
       <fab-ratings value="4" autofocus></fab-ratings>
     </p>
     <p>
-      <fab-ratings value="3"></fab-ratings>
+      <fab-ratings class="red" value="3"></fab-ratings>
     </p>
     <p>
       <fab-ratings value="5" count="10"></fab-ratings>
+    </p>
+    <p>
+      <fab-ratings class="blue" value="5" count="10"></fab-ratings>
     </p>
 
     <p><strong>Tab</strong>: Focus element</p>
